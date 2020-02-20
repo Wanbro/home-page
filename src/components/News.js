@@ -33,6 +33,7 @@ function News() {
                     )
                 })
             }
+            <h5>These news were provided by NewsAPI</h5>
         </div>
 
     )
