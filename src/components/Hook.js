@@ -8,7 +8,7 @@ export const useFetch = (url, initialValue) => {
             .then(response => response.json())
             .then(json =>
                 setResult(json));
-    }, []);
+    }, [url]);
 
     return result;
 }
