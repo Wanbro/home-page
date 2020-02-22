@@ -7,11 +7,13 @@ import Gallery from './components/Gallery'
 function App() {
 
   const [userQuery, setUserQuery] = useState('');
+  const [showGallery, setShowGallery] = useState(true);
 
   const updateUserQuery = event => {
     console.log('userQuery', userQuery)
     setUserQuery(event.target.value);
   }
+
   const handleKeyPress = event => {
     if (event.key === 'Enter') {
       searchQuery();
@@ -21,6 +23,11 @@ function App() {
 
   const searchQuery = () => {
     window.open(`https://google.com/search?q=${userQuery}`, '_blank');
+  }
+
+  const toggleShowGallery = () => {
+
+    setShowGallery(!showGallery)
   }
 
   return (
@@ -36,7 +43,14 @@ function App() {
       <hr />
       <Tasks />
       <hr />
-      <Gallery />
+      <div>
+        {
+          showGallery ? <Gallery /> : null
+        }
+        <button onClick={toggleShowGallery}>
+          {showGallery ? 'Hide' : 'Show'} Gallery
+        </button>
+      </div>
       <hr />
       <News />
     </div>
