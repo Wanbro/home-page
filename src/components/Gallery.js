@@ -35,6 +35,7 @@ function Gallery() {
         setDelay(delay < minumDelay ? minumDelay : delay);
     }
 
+    //added increment option so user can choose how many pictures it changes if the user doesnt like all the photos 
     const updateIncrement = event => {
         const increment = Number(event.target.value);
 
